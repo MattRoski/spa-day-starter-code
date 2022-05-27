@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
+    <title>Sign up</title>
+</head>
+<body>                 <!-- action=/user--> <!--Use th:value= when you want to inject information -->
+<form method = 'post' th:action="@{/user}">
+    <label>
+        Username:
+        <input type = 'text' name = 'username' th:value="${username}">
+    </label>
+
+    <label>
+        Email:
+        <input type = 'email' name = 'email' th:value="${email}">
+    </label>
+
+    <label>
+        Password:
+        <input type = 'password' name = 'password' >
+    </label>
+
+    <label>
+        Verify password:
+        <input type = 'password' name = 'verify' >
+    </label>
+    <p th:text="${error}"></p>
+    <input type='submit' value = 'Sign up'>
+</form>
+
+</body>
+</html>
